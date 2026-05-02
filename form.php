@@ -20,4 +20,4 @@ foreach ($xml->NEWSPAPER as $paper) {
 </form>
 
 </body>
-</html scs ds
+</html>
