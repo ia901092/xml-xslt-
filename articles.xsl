@@ -7,9 +7,59 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Articles</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background-color: #fdf6e3;
+        }
+        table.newspaper {
+            border: 2px solid #8b5e3c;
+            border-collapse: collapse;
+            background-color: #fff8ef;
+            margin-bottom: 16px;
+        }
+        table.newspaper td {
+            border: 1px solid #8b5e3c;
+            padding: 8px;
+            vertical-align: top;
+        }
+        table.articles {
+            border: 2px solid #8b5e3c;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table.articles td {
+            border: 1px solid #8b5e3c;
+            padding: 8px;
+            vertical-align: top;
+        }
+        td.news {
+            background-color: #e3f2fd;
+        }
+        td.review {
+            background-color: #fff9c4;
+        }
+        div.story p {
+            border-left: 4px solid #8b5e3c;
+            padding: 4px 8px;
+            margin: 4px 0;
+            background-color: #fffdf8;
+            box-shadow: 1px 1px 3px #ccc;
+            font-family: Georgia, serif;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 6px 0 2px 0;
+        }
+    </style>
 </head>
 <body>
     <xsl:apply-templates select="ARTICLES/NEWSPAPER"/>
+    <p><a href="form.php">Tillbaka till formuläret</a></p>
 </body>
 </html>
 </xsl:template>
