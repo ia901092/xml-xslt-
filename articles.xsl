@@ -38,14 +38,28 @@
 </xsl:template>
 
 <xsl:template match="ARTICLE">
-    <tr>
-        <td>
-            ID: <xsl:value-of select="@ID"/><br/>
-            TIME: <xsl:value-of select="@TIME"/><br/>
-            DESCRIPTION: <xsl:value-of select="@DESCRIPTION"/><br/>
-            <xsl:apply-templates select="HEADING|STORY"/>
-        </td>
-    </tr>
+    <xsl:choose>
+        <xsl:when test="@DESCRIPTION='News'">
+            <tr>
+                <td class="news">
+                    ID: <xsl:value-of select="@ID"/><br/>
+                    TIME: <xsl:value-of select="@TIME"/><br/>
+                    DESCRIPTION: <xsl:value-of select="@DESCRIPTION"/><br/>
+                    <xsl:apply-templates select="HEADING|STORY"/>
+                </td>
+            </tr>
+        </xsl:when>
+        <xsl:otherwise>
+            <tr>
+                <td class="review">
+                    ID: <xsl:value-of select="@ID"/><br/>
+                    TIME: <xsl:value-of select="@TIME"/><br/>
+                    DESCRIPTION: <xsl:value-of select="@DESCRIPTION"/><br/>
+                    <xsl:apply-templates select="HEADING|STORY"/>
+                </td>
+            </tr>
+        </xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
 <xsl:template match="ARTICLE/HEADING">
